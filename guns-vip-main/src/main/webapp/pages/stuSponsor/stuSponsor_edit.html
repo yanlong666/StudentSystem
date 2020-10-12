@@ -1,0 +1,102 @@
+@layout("/common/_form.html",{js:["/assets/stuSponsor/stuSponsor_edit.js"]}){
+
+<form class="layui-form" id="stuSponsorForm" lay-filter="stuSponsorForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="stuNumber" type="hidden"/>
+
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否为留守儿童<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="leftBehindChildren" lay-filter="leftBehindChildren">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">残疾类型<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="disableType" lay-filter="disableType">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否孤儿<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="orphan" lay-filter="orphan">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否农村低保<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="ruralDibao" lay-filter="ruralDibao">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否农村特困救助供养<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="extremelyPoor" lay-filter="extremelyPoor">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否单亲<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="singleParent" lay-filter="singleParent">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否军人子女<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="solderChildren" lay-filter="solderChildren">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">家庭是否有其他重大致贫因素<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="causesOfPoverty" lay-filter="causesOfPoverty">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否需要申请资助<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="applySponsor" lay-filter="applySponsor">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否享受一补<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="needSupply" lay-filter="needSupply">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" id="cancel">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}

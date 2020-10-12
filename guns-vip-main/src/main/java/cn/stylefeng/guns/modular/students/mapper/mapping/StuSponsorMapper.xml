@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.students.mapper.StuSponsorMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.students.entity.StuSponsor">
+        <id column="stu_number" property="stuNumber" />
+        <result column="left_behind_children" property="leftBehindChildren" />
+        <result column="disable_type" property="disableType" />
+        <result column="orphan" property="orphan" />
+        <result column="rural_dibao" property="ruralDibao" />
+        <result column="extremely_poor" property="extremelyPoor" />
+        <result column="single_parent" property="singleParent" />
+        <result column="solder_children" property="solderChildren" />
+        <result column="causes_of_poverty" property="causesOfPoverty" />
+        <result column="apply_sponsor" property="applySponsor" />
+        <result column="need_supply" property="needSupply" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        left_behind_children AS "leftBehindChildren", disable_type AS "disableType", orphan AS "orphan", rural_dibao AS "ruralDibao", extremely_poor AS "extremelyPoor", single_parent AS "singleParent", solder_children AS "solderChildren", causes_of_poverty AS "causesOfPoverty", apply_sponsor AS "applySponsor", need_supply AS "needSupply", stu_number AS "stuNumber"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.students.model.result.StuSponsorResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StuSponsorParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_sponsor where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StuSponsorParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_sponsor where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.students.model.result.StuSponsorResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StuSponsorParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_sponsor where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StuSponsorParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_sponsor where 1 = 1
+    </select>
+
+</mapper>

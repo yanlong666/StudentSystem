@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.students.mapper.StudentTotalMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.students.entity.StudentTotal">
+        <id column="ordernumber" property="ordernumber" />
+        <result column="stu_name" property="stuName" />
+        <result column="pstu_name" property="pstuName" />
+        <result column="photo_src" property="photoSrc" />
+        <result column="stu_number" property="stuNumber" />
+        <result column="card_number" property="cardNumber" />
+        <result column="id_card" property="idCard" />
+        <result column="phone_number" property="phoneNumber" />
+        <result column="birth" property="birth" />
+        <result column="gender" property="gender" />
+        <result column="nation" property="nation" />
+        <result column="blood_type" property="bloodType" />
+        <result column="Household_Register_type" property="householdRegisterType" />
+        <result column="youth_league_date" property="youthLeagueDate" />
+        <result column="youth_league_num" property="youthLeagueNum" />
+        <result column="residence_addr" property="residenceAddr" />
+        <result column="current_addr" property="currentAddr" />
+        <result column="Household_Register_front" property="householdRegisterFront" />
+        <result column="Household_Register_main" property="householdRegisterMain" />
+        <result column="Household_Register_self" property="householdRegisterSelf" />
+        <result column="stu_type" property="stuType" />
+        <result column="stu_class" property="stuClass" />
+        <result column="school_num" property="schoolNum" />
+        <result column="total_score" property="totalScore" />
+        <result column="test_score" property="testScore" />
+        <result column="graduate_school" property="graduateSchool" />
+        <result column="register_type" property="registerType" />
+        <result column="study_type" property="studyType" />
+        <result column="admit_order" property="admitOrder" />
+        <result column="follow_class" property="followClass" />
+        <result column="accommodation" property="accommodation" />
+        <result column="study_mode" property="studyMode" />
+        <result column="Migrant_Workers_children" property="migrantWorkersChildren" />
+        <result column="country_workers_children" property="countryWorkersChildren" />
+        <result column="government_purchase_degree" property="governmentPurchaseDegree" />
+        <result column="enrollmentstatus" property="enrollmentstatus" />
+        <result column="Political_Status" property="politicalStatus" />
+        <result column="hobby" property="hobby" />
+        <result column="principal_sheet" property="principalSheet" />
+        <result column="health_condition" property="healthCondition" />
+        <result column="left_behind_children" property="leftBehindChildren" />
+        <result column="disable_type" property="disableType" />
+        <result column="orphan" property="orphan" />
+        <result column="rural_dibao" property="ruralDibao" />
+        <result column="extremely_poor" property="extremelyPoor" />
+        <result column="single_parent" property="singleParent" />
+        <result column="solder_children" property="solderChildren" />
+        <result column="causes_of_poverty" property="causesOfPoverty" />
+        <result column="apply_sponsor" property="applySponsor" />
+        <result column="need_supply" property="needSupply" />
+        <result column="only_child" property="onlyChild" />
+        <result column="Martyr_children" property="martyrChildren" />
+        <result column="healthful_diet" property="healthfulDiet" />
+        <result column="put_on_record" property="putOnRecord" />
+        <result column="delete_member" property="deleteMember" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        stu_name AS "stuName", pstu_name AS "pstuName", photo_src AS "photoSrc", stu_number AS "stuNumber", card_number AS "cardNumber", id_card AS "idCard", phone_number AS "phoneNumber", birth AS "birth", gender AS "gender", nation AS "nation", blood_type AS "bloodType", Household_Register_type AS "householdRegisterType", youth_league_date AS "youthLeagueDate", youth_league_num AS "youthLeagueNum", residence_addr AS "residenceAddr", current_addr AS "currentAddr", Household_Register_front AS "householdRegisterFront", Household_Register_main AS "householdRegisterMain", Household_Register_self AS "householdRegisterSelf", stu_type AS "stuType", stu_class AS "stuClass", school_num AS "schoolNum", total_score AS "totalScore", test_score AS "testScore", graduate_school AS "graduateSchool", register_type AS "registerType", study_type AS "studyType", admit_order AS "admitOrder", follow_class AS "followClass", accommodation AS "accommodation", study_mode AS "studyMode", Migrant_Workers_children AS "migrantWorkersChildren", country_workers_children AS "countryWorkersChildren", government_purchase_degree AS "governmentPurchaseDegree", enrollmentstatus AS "enrollmentstatus", Political_Status AS "politicalStatus", hobby AS "hobby", principal_sheet AS "principalSheet", health_condition AS "healthCondition", left_behind_children AS "leftBehindChildren", disable_type AS "disableType", orphan AS "orphan", rural_dibao AS "ruralDibao", extremely_poor AS "extremelyPoor", single_parent AS "singleParent", solder_children AS "solderChildren", causes_of_poverty AS "causesOfPoverty", apply_sponsor AS "applySponsor", need_supply AS "needSupply", only_child AS "onlyChild", Martyr_children AS "martyrChildren", healthful_diet AS "healthfulDiet", put_on_record AS "putOnRecord", delete_member AS "deleteMember", ordernumber AS "ordernumber"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.students.model.result.StudentTotalResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StudentTotalParam">
+        select
+        <include refid="Base_Column_List"/>
+        from student_total where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StudentTotalParam">
+        select
+        <include refid="Base_Column_List"/>
+        from student_total where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.students.model.result.StudentTotalResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StudentTotalParam">
+        select
+        <include refid="Base_Column_List"/>
+        from student_total where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StudentTotalParam">
+        select
+        <include refid="Base_Column_List"/>
+        from student_total where 1 = 1
+    </select>
+
+</mapper>

@@ -1,0 +1,547 @@
+@layout("/common/_form.html",{js:["/assets/studentTotal/studentTotal_edit.js"]}){
+
+<form class="layui-form" id="studentTotalForm" lay-filter="studentTotalForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="ordernumber" type="hidden" />
+
+                    <div class="layui-tab">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">学生个人信息</li>
+                            <li>学生学籍信息</li>
+                            <li>学生简历信息</li>
+                            <li>学生资助信息</li>
+                            <li>其他信息</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+
+                                <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                    <tr>
+                                        <td align="right">姓名<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="stuName" name="stuName" placeholder="请输入姓名" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td align="right">曾用名<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="pstuName" name="pstuName" placeholder="请输入曾用名" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td colspan="1" rowspan="3" align="right">个人照片<span style="color: red;">*</span></td>
+                                        <td colspan="1" rowspan="3">
+                                            <img id="filePreview" src="/upload_picture.JPG" /><br><br>
+                                            <button type="button" class="layui-btn layui-btn-xs" id="photoSrc">上传照片</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">学号<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="stuNumber" name="stuNumber" placeholder="请输入学号" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td align="right">一卡通号<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="cardNumber" name="cardNumber" placeholder="请输入一卡通号" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">证件号码<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="idCard" name="idCard" placeholder="请输入证件号码" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td align="right">联系电话<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="phoneNumber" name="phoneNumber" placeholder="请输入联系电话" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">出生日期<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input type="text" class="layui-input" id="birth">
+                                        </td>
+                                        <td align="right">性别<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="gender" lay-filter="gender">
+                                                <option value="0" select="selected" >男</option>
+                                                <option value="1">女</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">民族<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="nation" lay-filter="nation">
+                                                <option value="0" select="selected" >汉族</option>
+                                                <option value="1">回族</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">血型<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="bloodType" lay-filter="bloodType">
+                                                <option value="0" select="selected" >A型</option>
+                                                <option value="1">B型</option>
+                                                <option value="2">AB型</option>
+                                                <option value="3">O型</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">户籍类别<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="householdRegisterType" lay-filter="householdRegisterType">
+                                                <option value="0" select="selected" >非农业户口</option>
+                                                <option value="1">农业户口</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">入团日期<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input type="text" class="layui-input" id="youthLeagueDate">
+                                        </td>
+                                        <td align="right">团员发展编号<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="youthLeagueNum" name="youthLeagueNum" placeholder="请输入团员发展编号" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                            <tr>
+                                                <td align="right">户籍地址<span style="color: red;">*</span></td>
+                                                <td>
+                                                    <select name="residenceAddr" lay-filter="residenceAddr">
+                                                        <option value='' disabled selected style='display:none;'>-省/自治区/直辖市-</option>
+                                                        <option value="0" select="selected" >宁夏回族自治区</option>
+                                                        <option value="1">北京市</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="aaa" lay-filter="aaa">
+                                                        <option value='' disabled selected style='display:none;'>-地级市-</option>
+                                                        <option value="0" select="selected" >银川市</option>
+                                                        <option value="1">石嘴山市</option>
+                                                        <option value="2">大武口市</option>
+                                                        <option value="3">中卫市</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="bbb" lay-filter="bbb">
+                                                        <option value='' disabled selected style='display:none;'>-区/县-</option>
+                                                        <option value="0" select="selected" >兴庆区</option>
+                                                        <option value="1">金凤区</option>
+                                                        <option value="2">西夏区</option>
+                                                        <option value="3">贺兰县</option>
+                                                        <option value="4">永宁县</option>
+                                                        <option value="5">平罗县</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="aaa" lay-filter="aaa">
+                                                        <option value='' disabled selected style='display:none;'>-乡镇/街道-</option>
+                                                        <option value="0" select="selected" >凤凰街</option>
+                                                        <option value="1">解放街</option>
+                                                        <option value="2">文化街</option>
+                                                        <option value="3">富宁街</option>
+                                                        <option value="4">新华街</option>
+                                                        <option value="5">玉皇阁街</option>
+                                                        <option value="6">前进街</option>
+                                                        <option value="7">中山街</option>
+                                                        <option value="8">银古路</option>
+                                                        <option value="9">胜利街</option>
+                                                        <option value="10">丽景街</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input id="" name="" placeholder="请输入详细地址（村/社区-组队/小区-门牌号）" type="text" class="layui-input" lay-verify="required" required/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </tr>
+                                    <tr>
+                                        <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                            <tr>
+                                                <td align="right">现居住地<span style="color: red;">*</span></td>
+                                                <td>
+                                                    <select name="currentAddr" lay-filter="currentAddr">
+                                                        <option value='' disabled selected style='display:none;'>-省/自治区/直辖市-</option>
+                                                        <option value="0" select="selected" >宁夏回族自治区</option>
+                                                        <option value="1">北京市</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="aaa" lay-filter="aaa">
+                                                        <option value='' disabled selected style='display:none;'>-地级市-</option>
+                                                        <option value="0" select="selected" >银川市</option>
+                                                        <option value="1">石嘴山市</option>
+                                                        <option value="2">大武口市</option>
+                                                        <option value="3">中卫市</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="bbb" lay-filter="bbb">
+                                                        <option value='' disabled selected style='display:none;'>-区/县-</option>
+                                                        <option value="0" select="selected" >兴庆区</option>
+                                                        <option value="1">金凤区</option>
+                                                        <option value="2">西夏区</option>
+                                                        <option value="3">贺兰县</option>
+                                                        <option value="4">永宁县</option>
+                                                        <option value="5">平罗县</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="aaa" lay-filter="aaa">
+                                                        <option value='' disabled selected style='display:none;'>-乡镇/街道-</option>
+                                                        <option value="0" select="selected" >凤凰街</option>
+                                                        <option value="1">解放街</option>
+                                                        <option value="2">文化街</option>
+                                                        <option value="3">富宁街</option>
+                                                        <option value="4">新华街</option>
+                                                        <option value="5">玉皇阁街</option>
+                                                        <option value="6">前进街</option>
+                                                        <option value="7">中山街</option>
+                                                        <option value="8">银古路</option>
+                                                        <option value="9">胜利街</option>
+                                                        <option value="10">丽景街</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input id="" name="" placeholder="请输入详细地址（村/社区-组队/小区-门牌号）" type="text" class="layui-input" lay-verify="required" required/>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </tr>
+                                    <tr>
+                                        <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                            <tr>
+                                                <td colspan="1" rowspan="3" align="right">户口本首页<span style="color: red;">*</span></td>
+                                                <td colspan="1" rowspan="3">
+                                                    <img id="filePreview1" src="/timg.jpg"/><br><br>
+                                                    <button type="button" class="layui-btn layui-btn-xs" id="householdRegisterFront">上传照片</button>
+                                                </td>
+                                                <td colspan="1" rowspan="3" align="right">户口本主页<span style="color: red;">*</span></td>
+                                                <td colspan="1" rowspan="3">
+                                                    <img id="filePreview2" src="/timg.jpg"/><br><br>
+                                                    <button type="button" class="layui-btn layui-btn-xs" id="householdRegisterMain">上传照片</button>
+                                                </td>
+                                                <td colspan="1" rowspan="3" align="right">户口本本人页<span style="color: red;">*</span></td>
+                                                <td colspan="1" rowspan="3">
+                                                    <img id="filePreview3" src="/timg.jpg"/><br><br>
+                                                    <button type="button" class="layui-btn layui-btn-xs" id="householdRegisterSelf">上传照片</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+
+
+                            <div class="layui-tab-item">
+                                <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                    <tr>
+                                        <td align="right">学生类别<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="stuType" lay-filter="stuType">
+                                                <option value="0" select="selected" >高中生</option>
+                                                <option value="1">初中生</option>
+                                                <option value="2">小学生</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">班级<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="stuClass" name="stuClass" placeholder="请输入班级" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td align="right">省内学校代码<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="schoolNum" name="schoolNum" placeholder="请输入省内学校代码" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">入学总分<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="totalScore" name="totalScore" placeholder="请输入入学总分" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td align="right">中考文化课成绩<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="testScore" name="testScore" placeholder="请输入中考文化课成绩" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td align="right">原毕业院校<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="graduateSchool" name="graduateSchool" placeholder="请输入原毕业院校" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">学生来源<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="registerType" lay-filter="registerType">
+                                                <option value="0" select="selected" >学区内</option>
+                                                <option value="1">本市学区外</option>
+                                                <option value="2">外地借读</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">入学方式<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="studyType" lay-filter="studyType">
+                                                <option value="0" select="selected" >统一招生考试（普通入学）</option>
+                                                <option value="1">艺术/体育特招</option>
+                                                <option value="2">其他</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">中招序号<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="admitOrder" name="admitOrder" placeholder="请输入中招序号" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">随班就读<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="followClass" lay-filter="followClass">
+                                                <option value="0" select="selected" >非随班就读</option>
+                                                <option value="1">随班就读</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否住宿生<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="accommodation" lay-filter="accommodation">
+                                                <option value="0" select="selected" >是</option>
+                                                <option value="1">否</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">就读方式<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="studyMode" lay-filter="studyMode">
+                                                <option value="0" select="selected" >走读</option>
+                                                <option value="1">住宿</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">是否随迁子女<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="migrantWorkersChildren" lay-filter="migrantWorkersChildren">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否进城务工随迁子女<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="countryWorkersChildren" lay-filter="countryWorkersChildren">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否由政府购买学位<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="governmentPurchaseDegree" lay-filter="governmentPurchaseDegree">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">学籍变更备注<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="enrollmentstatus" name="enrollmentstatus" placeholder="请输入学籍变更备注" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="layui-tab-item">
+                                <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                    <tr>
+                                        <td align="right">政治面貌<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="politicalStatus" lay-filter="politicalStatus">
+                                                <option value="0">中共党员</option>
+                                                <option value="1">中共预备党员</option>
+                                                <option value="2">共青团员</option>
+                                                <option value="3">民革党员</option>
+                                                <option value="4">民盟盟员</option>
+                                                <option value="5">民建会员</option>
+                                                <option value="6">民进会员</option>
+                                                <option value="7">农工党党员</option>
+                                                <option value="8">致公党党员</option>
+                                                <option value="9">九三学社社员</option>
+                                                <option value="10">台盟盟员</option>
+                                                <option value="11">无党派人士</option>
+                                                <option value="12" select="selected" >群众</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">特长<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="hobby" name="hobby" placeholder="请输入特长" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                        <td align="right">主页地址<span style="color: red;">*</span></td>
+                                        <td>
+                                            <input id="principalSheet" name="principalSheet" placeholder="请输入主页地址" type="text" class="layui-input" lay-verify="required" required/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">健康状况<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="healthCondition" lay-filter="healthCondition">
+                                                <option value="0" select="selected" >健康</option>
+                                                <option value="1">一般</option>
+                                                <option value="2">较差</option>
+                                                <option value="3">残疾</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="layui-tab-item">
+                                <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                    <tr>
+                                        <td align="right">是否为留守儿童<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="leftBehindChildren" lay-filter="leftBehindChildren">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">残疾类型<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="disableType" lay-filter="disableType">
+                                                <option value="0" select="selected" >无</option>
+                                                <option value="1">视力</option>
+                                                <option value="2">听力</option>
+                                                <option value="3">肢体</option>
+                                                <option value="4">精神</option>
+                                                <option value="5">智力</option>
+                                                <option value="6">言语</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否孤儿<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="orphan" lay-filter="orphan">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">是否农村低保<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="ruralDibao" lay-filter="ruralDibao">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否农村特困救助供养<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="extremelyPoor" lay-filter="extremelyPoor">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否单亲<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="singleParent" lay-filter="singleParent">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">是否军人子女<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="solderChildren" lay-filter="solderChildren">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">家庭是否有其他重大致贫因素<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="causesOfPoverty" lay-filter="causesOfPoverty">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否需要申请资助<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="applySponsor" lay-filter="applySponsor">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">是否享受一补<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="needSupply" lay-filter="needSupply">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="layui-tab-item">
+                                <table class="layui-table" lay-skin="nob" style="text-align: center">
+                                    <tr>
+                                        <td align="right">是否为独生子女<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="onlyChild" lay-filter="onlyChild">
+                                                <option value="0" select="selected" >是</option>
+                                                <option value="1">否</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否烈士或优抚子女<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="martyrChildren" lay-filter="martyrChildren">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                        <td align="right">是否享受营养餐<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="healthfulDiet" lay-filter="healthfulDiet">
+                                                <option value="0" select="selected" >是</option>
+                                                <option value="1">否</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">是否建档立卡贫困户在校生<span style="color: red;">*</span></td>
+                                        <td>
+                                            <select name="putOnRecord" lay-filter="putOnRecord">
+                                                <option value="0" select="selected" >否</option>
+                                                <option value="1">是</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- <div class="layui-inline layui-col-md4">
+                                        <label class="layui-form-label">删除<span style="color: red;">*</span></label>
+                                        <div class="layui-input-block">
+                                            <input id="deleteMember" name="deleteMember" placeholder="请输入删除" type="text" class="layui-input" lay-verify="required" required/>
+                                        </div>
+                                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" id="cancel">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //…
+    });
+</script>
+@}

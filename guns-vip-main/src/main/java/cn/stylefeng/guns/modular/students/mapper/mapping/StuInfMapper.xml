@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.students.mapper.StuInfMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.students.entity.StuInf">
+        <id column="stu_number" property="stuNumber" />
+        <result column="stu_name" property="stuName" />
+        <result column="pstu_name" property="pstuName" />
+        <result column="class_number" property="classNumber" />
+        <result column="card_number" property="cardNumber" />
+        <result column="id_card" property="idCard" />
+        <result column="phone_number" property="phoneNumber" />
+        <result column="photo_src" property="photoSrc" />
+        <result column="birth" property="birth" />
+        <result column="gender" property="gender" />
+        <result column="nation" property="nation" />
+        <result column="blood_type" property="bloodType" />
+        <result column="Household_Register_type" property="householdRegisterType" />
+        <result column="youth_league_date" property="youthLeagueDate" />
+        <result column="youth_league_num" property="youthLeagueNum" />
+        <result column="residence_addr" property="residenceAddr" />
+        <result column="current_addr" property="currentAddr" />
+        <result column="Household_Register_front" property="householdRegisterFront" />
+        <result column="Household_Register_main" property="householdRegisterMain" />
+        <result column="Household_Register_self" property="householdRegisterSelf" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        stu_name AS "stuName", pstu_name AS "pstuName", stu_number AS "stuNumber", class_number AS "classNumber", card_number AS "cardNumber", id_card AS "idCard", phone_number AS "phoneNumber", photo_src AS "photoSrc", birth AS "birth", gender AS "gender", nation AS "nation", blood_type AS "bloodType", Household_Register_type AS "householdRegisterType", youth_league_date AS "youthLeagueDate", youth_league_num AS "youthLeagueNum", residence_addr AS "residenceAddr", current_addr AS "currentAddr", Household_Register_front AS "householdRegisterFront", Household_Register_main AS "householdRegisterMain", Household_Register_self AS "householdRegisterSelf"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.students.model.result.StuInfResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StuInfParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_inf where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StuInfParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_inf where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.students.model.result.StuInfResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StuInfParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_inf where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StuInfParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_inf where 1 = 1
+    </select>
+
+</mapper>

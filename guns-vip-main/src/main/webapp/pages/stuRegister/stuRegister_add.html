@@ -1,0 +1,118 @@
+@layout("/common/_form.html",{js:["/assets/stuRegister/stuRegister_add.js"],css:["/assets/expand/module/formSelects/formSelects-v4.css"]}){
+
+<form class="layui-form" id="stuRegisterForm" lay-filter="stuRegisterForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="stuNum" type="hidden"/>
+
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">学生类别<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="stuType" name="stuType" placeholder="请输入学生类别" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">班级<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="stuClass" name="stuClass" placeholder="请输入班级" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">省内学校代码<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="schoolNum" name="schoolNum" placeholder="请输入省内学校代码" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">入学总分<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="totalScore" name="totalScore" placeholder="请输入入学总分" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">中考文化课成绩<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="testScore" name="testScore" placeholder="请输入中考文化课成绩" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">原毕业院校<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="graduateSchool" name="graduateSchool" placeholder="请输入原毕业院校" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">学生来源<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="registerType" name="registerType" placeholder="请输入学生来源" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">入学方式<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="studyType" name="studyType" placeholder="请输入入学方式" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">中招序号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="admitOrder" name="admitOrder" placeholder="请输入中招序号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">随班就读<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="followClass" name="followClass" placeholder="请输入随班就读" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否住宿生<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="accommodation" name="accommodation" placeholder="请输入是否住宿生" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">就读方式<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="studyMode" name="studyMode" placeholder="请输入就读方式" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否随迁子女<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="migrantWorkersChildren" name="migrantWorkersChildren" placeholder="请输入是否随迁子女" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否进城务工随迁子女<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="countryWorkersChildren" name="countryWorkersChildren" placeholder="请输入是否进城务工随迁子女" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否由政府购买学位<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="governmentPurchaseDegree" name="governmentPurchaseDegree" placeholder="请输入是否由政府购买学位" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">学籍变更备注<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="enrollmentstatus" name="enrollmentstatus" placeholder="请输入学籍变更备注" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" id="cancel">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}

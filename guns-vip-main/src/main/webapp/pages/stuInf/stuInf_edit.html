@@ -1,0 +1,156 @@
+@layout("/common/_form.html",{js:["/assets/stuInf/stuInf_edit.js"]}){
+
+<form class="layui-form" id="stuInfForm" lay-filter="stuInfForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="stuNumber" type="hidden"/>
+
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">姓名<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="stuName" name="stuName" placeholder="请输入姓名" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">曾用名<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="pstuName" name="pstuName" placeholder="请输入曾用名" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">班级<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="classNumber" name="classNumber" placeholder="请输入班级" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">一卡通号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="cardNumber" name="cardNumber" placeholder="请输入一卡通号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">证件号码<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="idCard" name="idCard" placeholder="请输入证件号码" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">联系电话<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="phoneNumber" name="phoneNumber" placeholder="请输入联系电话" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">个人照片<span style="color: red;">*</span></label>
+                        <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="photoSrc">上传图片</button>
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="filePreview">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">出生日期<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="birth">
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">性别<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="gender" lay-filter="gender">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">民族<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="nation" lay-filter="nation">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">血型<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="bloodType" lay-filter="bloodType">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">户籍类别<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="householdRegisterType" lay-filter="householdRegisterType">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">入团日期<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="youthLeagueDate">
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">团员发展编号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="youthLeagueNum" name="youthLeagueNum" placeholder="请输入团员发展编号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">户籍地址<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="residenceAddr" name="residenceAddr" placeholder="请输入户籍地址" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">现居住地<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="currentAddr" name="currentAddr" placeholder="请输入现居住地" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">户口本首页<span style="color: red;">*</span></label>
+                        <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="householdRegisterFront">上传图片</button>
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="filePreview">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">户口本主页<span style="color: red;">*</span></label>
+                        <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="householdRegisterMain">上传图片</button>
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="filePreview">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">户口本本人页<span style="color: red;">*</span></label>
+                        <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="householdRegisterSelf">上传图片</button>
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="filePreview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" id="cancel">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}

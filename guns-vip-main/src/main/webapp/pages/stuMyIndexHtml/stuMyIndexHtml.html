@@ -1,0 +1,57 @@
+@layout("/common/_container.html",{js:["/assets/stuMyIndexHtml/stuMyIndexHtml.js"]}){
+
+<div class="layui-body-header">
+    <span class="layui-body-header-title">管理</span>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm12 layui-col-md12 layui-col-lg12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form toolbar">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+
+
+                                <div class="layui-tab">
+                                    <ul class="layui-tab-title">
+                                        <li class="layui-this" id="a1">网站设置</li>
+                                        <li id="a2">用户管理</li>
+                                        <li id="a3">权限分配</li>
+                                        <li id="a4">商品管理</li>
+                                        <li id="a5">订单管理</li>
+                                    </ul>
+                                    <div class="layui-tab-content">
+                                        <div class="layui-tab-item layui-show"><a href="/stuInf"></a> 内容1</div>
+                                        <div class="layui-tab-item">内容2</div>
+                                        <div class="layui-tab-item">内容3</div>
+                                        <div class="layui-tab-item">内容4</div>
+                                        <div class="layui-tab-item">内容5</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <table class="layui-table" id="stuMyIndexHtmlTable" lay-filter="stuMyIndexHtmlTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="tableBar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
+</script>
+
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //…
+    });
+</script>
+@}

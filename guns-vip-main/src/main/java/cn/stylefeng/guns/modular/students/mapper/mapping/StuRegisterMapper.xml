@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.students.mapper.StuRegisterMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.students.entity.StuRegister">
+        <id column="stuNum" property="stuNum" />
+        <result column="stu_type" property="stuType" />
+        <result column="stu_class" property="stuClass" />
+        <result column="school_num" property="schoolNum" />
+        <result column="total_score" property="totalScore" />
+        <result column="test_score" property="testScore" />
+        <result column="graduate_school" property="graduateSchool" />
+        <result column="register_type" property="registerType" />
+        <result column="study_type" property="studyType" />
+        <result column="admit_order" property="admitOrder" />
+        <result column="follow_class" property="followClass" />
+        <result column="accommodation" property="accommodation" />
+        <result column="study_mode" property="studyMode" />
+        <result column="Migrant_Workers_children" property="migrantWorkersChildren" />
+        <result column="country_workers_children" property="countryWorkersChildren" />
+        <result column="government_purchase_degree" property="governmentPurchaseDegree" />
+        <result column="enrollmentstatus" property="enrollmentstatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        stu_type AS "stuType", stu_class AS "stuClass", school_num AS "schoolNum", total_score AS "totalScore", test_score AS "testScore", graduate_school AS "graduateSchool", register_type AS "registerType", study_type AS "studyType", admit_order AS "admitOrder", follow_class AS "followClass", accommodation AS "accommodation", study_mode AS "studyMode", Migrant_Workers_children AS "migrantWorkersChildren", country_workers_children AS "countryWorkersChildren", government_purchase_degree AS "governmentPurchaseDegree", enrollmentstatus AS "enrollmentstatus", stuNum AS "stuNum"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.students.model.result.StuRegisterResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StuRegisterParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_register where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StuRegisterParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_register where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.students.model.result.StuRegisterResult" parameterType="cn.stylefeng.guns.modular.students.model.params.StuRegisterParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_register where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.students.model.params.StuRegisterParam">
+        select
+        <include refid="Base_Column_List"/>
+        from stu_register where 1 = 1
+    </select>
+
+</mapper>

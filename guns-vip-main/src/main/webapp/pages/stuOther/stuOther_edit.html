@@ -1,0 +1,54 @@
+@layout("/common/_form.html",{js:["/assets/stuOther/stuOther_edit.js"]}){
+
+<form class="layui-form" id="stuOtherForm" lay-filter="stuOtherForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="stuNumber" type="hidden"/>
+
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否为独生子女<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="onlyChild" lay-filter="onlyChild">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否烈士或优抚子女<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="martyrChildren" lay-filter="martyrChildren">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否享受营养餐<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="healthfulDiet" lay-filter="healthfulDiet">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">是否建档立卡贫困户在校生<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="putOnRecord" lay-filter="putOnRecord">
+                                <option value="">下拉单选框</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" id="cancel">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}
